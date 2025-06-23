@@ -1,0 +1,18 @@
+auth:
+  ignore_urls:
+    - /api/**
+    - /jmreport/**
+    - /file-storage/attachment/**
+    - /auth/captcha
+    - /auth/login
+    - /auth/send/code
+    - /auth/mobile
+    - /upload/**
+    - /actuator/**
+    - /v3/api-docs/**
+    - /webjars/**
+    - /swagger/**
+    - /swagger-resources/**
+    - /swagger-ui.html
+    - /swagger-ui/**
+    - /doc.html
