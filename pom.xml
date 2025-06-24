@@ -197,6 +197,12 @@
             <artifactId>dozer-spring-boot-starter</artifactId>
             <version>6.5.2</version>
         </dependency>
+        <!--netty-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.20.Final</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
