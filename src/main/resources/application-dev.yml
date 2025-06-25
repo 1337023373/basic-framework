@@ -7,6 +7,10 @@ spring:
     username: root
     password: mairunQ!@#123
 
+  data:
+    mongodb:
+      uri: mongodb://mairun:mairun123@47.108.155.61:27017
+      database: mairun_mes
   redis:
     host: 10.10.10.242
     port: 16379
