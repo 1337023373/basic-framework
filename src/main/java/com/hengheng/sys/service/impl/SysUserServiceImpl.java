@@ -1,6 +1,7 @@
 package com.hengheng.sys.service.impl;
 
 import com.hengheng.common.base.MyPageResult;
+import com.hengheng.common.constant.GenderEnum;
 import com.hengheng.common.constant.SuperAdminEnum;
 import com.hengheng.common.exception.ServerException;
 import com.hengheng.common.utils.DozerUtils;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Author lkj
@@ -83,7 +85,14 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public List<SysUserVO> getList() {
         List<SysUserModel> list = sysUserRepository.getList();
-        return DozerUtils.mapList(list, SysUserVO.class);
+        List<SysUserVO> voList = DozerUtils.mapList(list, SysUserVO.class);
+        List<Long> orgIds = list.stream().map(SysUserModel::getOrgId).collect(Collectors.toList());
+        Map<Long, String> orgNameByIds = sysOrgRepository.getOrgNameByIds(orgIds);
+        voList.forEach(l->{
+           l.setOrgName(orgNameByIds.get(l.getOrgId()));
+           l.setGenderStr(GenderEnum.getValueByCode(l.getGender()));
+        });
+        return voList;
     }
 
     @Override

@@ -1,5 +1,6 @@
 auth:
   ignore_urls:
+#    -白名单，开放接口验证
     - /api/**
     - /jmreport/**
     - /file-storage/attachment/**
