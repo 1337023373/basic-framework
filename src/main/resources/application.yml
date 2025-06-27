@@ -24,6 +24,7 @@ spring:
     database: 0
     password:
 
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
@@ -57,3 +58,6 @@ logging:
     root: info
     com.hengheng: info
 
+file:
+  upload-path-windows: D:/uploads  # 本地 Windows 上传路径
+  upload-path-linux: /opt/basic-framework/uploads  # Linux 上传路径
